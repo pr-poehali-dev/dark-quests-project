@@ -5,6 +5,8 @@ import Icon from '@/components/ui/icon';
 const VK_URL = 'https://vk.com/thedark32';
 const PHONE = '+7 (4812) 00-00-00';
 const EMAIL = 'info@thedark.ru';
+const ADDRESS = 'г. Брянск, Бежицкий р-н, ул. Союзная, 5';
+const MAPS_URL = 'https://yandex.ru/maps/?text=Брянск+Союзная+5';
 
 const QUEST_IMG_1 = 'https://cdn.poehali.dev/projects/3d3ede80-4988-46f4-8af6-d70926a053ee/files/48e4d0e7-25a8-46de-b128-a7cdcd77ee96.jpg';
 const QUEST_IMG_2 = 'https://cdn.poehali.dev/projects/3d3ede80-4988-46f4-8af6-d70926a053ee/files/b780f4cd-ad15-468e-b7ea-68d4df850202.jpg';
@@ -383,6 +385,8 @@ const AI_KB = [
   { q:['караоке'], a:'Смарт-Караоке — скоро! Следите за обновлениями в ВКонтакте: vk.com/thedark32' },
   { q:['слот','время','бронь','записаться','запись'], a:'Слоты каждые 2 часа с 00:00 до 22:00. Нажмите «Давай подготовим праздник вместе!» для выбора удобного времени.' },
   { q:['скоро','ноябрь','новый квест'], a:'В ноябре откроется третий квест! Подробности в ВКонтакте: vk.com/thedark32' },
+  { q:['адрес','где','находится','приехать','проехать','район','бежицк','союзная','локация','место'], a:'Мы в Брянске: Бежицкий район, ул. Союзная, 5. Удобно добраться на машине и общественном транспорте.' },
+  { q:['брянск','город'], a:'Да, мы находимся в Брянске — Бежицкий район, ул. Союзная, 5.' },
 ];
 
 function AIChat() {
@@ -566,7 +570,7 @@ export default function Index() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full" style={{background:'radial-gradient(circle, rgba(211,47,47,0.06) 0%, transparent 70%)'}} />
         </div>
         <div className="relative z-10">
-          <p className="text-xs font-oswald tracking-[0.5em] text-[var(--accent-red)] uppercase mb-5 animate-fade-in-up">Смоленск · Квест-клуб</p>
+          <p className="text-xs font-oswald tracking-[0.5em] text-[var(--accent-red)] uppercase mb-5 animate-fade-in-up">Брянск · Квест-клуб</p>
           <h1 className="font-cormorant text-8xl sm:text-9xl font-light leading-none mb-3 animate-fade-in-up delay-100 text-glow" style={{opacity:0}}>
             ТЬМА
           </h1>
@@ -704,8 +708,12 @@ export default function Index() {
                 <span className="font-cormorant text-xl tracking-[0.2em]">ТЬМА</span>
               </div>
               <p className="font-oswald font-light text-[var(--text-muted)] text-xs leading-relaxed">
-                Квест-клуб в Смоленске. Квесты, мафия, антикинотеатр, банкетный зал, смарт-караоке.
+                Квест-клуб в Брянске. Квесты, мафия, антикинотеатр, банкетный зал, смарт-караоке.
               </p>
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1.5 mt-3 text-xs font-oswald font-light text-[var(--text-muted)] hover:text-[var(--accent-red)] transition-colors">
+                <Icon name="MapPin" size={12} /> {ADDRESS}
+              </a>
             </div>
             <div>
               <p className="text-xs font-oswald uppercase tracking-widest text-[var(--accent-red)] mb-4">Контакты</p>
@@ -715,6 +723,10 @@ export default function Index() {
                 </a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-xs font-oswald font-light text-[var(--text-muted)] hover:text-[var(--accent-red)] transition-colors">
                   <Icon name="Mail" size={13} /> {EMAIL}
+                </a>
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-oswald font-light text-[var(--text-muted)] hover:text-[var(--accent-red)] transition-colors">
+                  <Icon name="MapPin" size={13} /> {ADDRESS}
                 </a>
               </div>
             </div>
@@ -728,7 +740,7 @@ export default function Index() {
           </div>
           <div className="gothic-divider mb-6" />
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs font-oswald text-[var(--text-muted)]">© 2024 ТЬМА · Квест-клуб Смоленск</p>
+            <p className="text-xs font-oswald text-[var(--text-muted)]">© 2024 ТЬМА · Квест-клуб Брянск</p>
             <button onClick={openBooking} className="btn-gothic px-6 py-2.5 text-xs">
               Давай подготовим праздник вместе!
             </button>
